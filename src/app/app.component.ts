@@ -105,7 +105,7 @@ export class AppComponent {
         // Hero
         heroBadge: '🏆 சென்னையில் 25+ வருட தலைசிறந்த அனுபவம்',
         heroHeadline: 'வீடு மற்றும் வணிக வளாகங்களுக்கு நேர்த்தியான டைல்ஸ் பதிக்கும் பணிகள்',
-        heroDesc: 'புதிய தரை டைல்ஸ், பாத்ரூம் முழு புதுப்பித்தல், கிச்சன் டைல்ஸ், மாடி வெப்பம் தணிக்கும் கூலிங் டைல்ஸ். லேசர் மட்டம் மற்றும் துல்லியமான தண்ணீர் சரிவுடன் 25 வருட அனுபவமிக்க மேஸ்திரியின் நேரடி மேற்பார்வையில் சிறந்த தரம்!',
+        heroDesc: 'புதிய தரை டைல்ஸ், பாத்ரூம் முழு புதுப்பித்தல், கிச்சன் டைல்ஸ், மாடி வெப்பம் தணிக்கும் கூலிங் டைல்ஸ். சீரான தரை மட்டம் மற்றும் துல்லியமான தண்ணீர் சரிவுடன் 25 வருட அனுபவமிக்க மேஸ்திரியின் நேரடி மேற்பார்வையில் சிறந்த தரம்!',
         check1: 'உள்ளீடற்ற பொள்ளல் சத்தம் இல்லாத வேலை',
         check2: 'தண்ணீர் தேங்காத துல்லியமான சரிவு',
         check3: 'நேரடி மேஸ்திரி • நியாயமான கூலி',
@@ -123,7 +123,7 @@ export class AppComponent {
         // Hero Card
         expCardBadge: '25+ வருட அனுபவம்',
         expCardTitle: 'கைதேர்ந்த கைவினைத் தரம்',
-        expCardQuote: '"ஒவ்வொரு டைல்ஸும் முழு ஈடுபாட்டுடன், லேசர் மட்டம் பார்த்து, பல தலைமுறைகளுக்கு உறுதியாக இருக்கும்படி பதிக்கப்படும்."',
+        expCardQuote: '"ஒவ்வொரு டைல்ஸும் முழு ஈடுபாட்டுடன், சரியான மட்டம் பார்த்து, பல தலைமுறைகளுக்கு உறுதியாக இருக்கும்படி பதிக்கப்படும்."',
         expCardPills: ['விட்ரிஃபைட் 2x4 & 4x6', 'பாத்ரூம் புதுப்பித்தல்', 'எப்பாக்ஸி க்ரௌட்டிங்', 'மாடி கூல் டைல்ஸ்', 'பெரிய ஸ்லாப்கள்'],
         expCardDirectTitle: 'நேரடி மேஸ்திரி தொடர்பு',
         expCardDirectSub: 'சென்னை & புறநகர் பகுதிகள் முழுவதும்',
@@ -133,8 +133,8 @@ export class AppComponent {
         expTitle: '25+ வருட நேரடி அனுபவம் ஏன் மிக முக்கியம்?',
         expSubtitle: 'டைல்ஸ் பதிப்பது வெறும் கல் ஒட்டும் வேலை அல்ல. அனுபவம் குறைந்த கூலி ஆட்களிடம் கொடுத்தால் டைல்ஸ் பொள்ளல் விடும், தண்ணீர் தேங்கும், கீழ்தளத்தில் நீர் கசியும். எங்கள் 25 வருட அனுபவம் தரும் நன்மைகள்:',
         feat1Icon: '📐',
-        feat1Title: 'லேசர் மட்டம் & பொள்ளல் சத்தம் இல்லாத வேலை',
-        feat1Desc: 'ஒவ்வொரு டைல்ஸின் அடியிலும் முழுமையாக சிமெண்ட் படுக்கை அமைத்து, லேசர் கருவி கொண்டு மட்டம் சரிபார்க்கிறோம். எந்த இடத்திலும் தட்டினால் பொள்ளல் சத்தம் வராது.',
+        feat1Title: 'சீரான தரை மட்டம் & பொள்ளல் சத்தம் இல்லாத வேலை',
+        feat1Desc: 'ஒவ்வொரு டைல்ஸின் அடியிலும் முழுமையாக சிமெண்ட் படுக்கை அமைத்து, துல்லியமாக மட்டம் சரிபார்க்கிறோம். எந்த இடத்திலும் தட்டினால் பொள்ளல் சத்தம் வராது.',
         feat1Badge: '✓ 100% உறுதியான சிமெண்ட் பிணைப்பு',
 
         feat2Icon: '🌊',
@@ -163,7 +163,7 @@ export class AppComponent {
         compGoodTitle: '✅ ரம்யா டைல்ஸ் கான்ட்ராக்டர் (25+ வருட அனுபவம்)',
         compGoodList: [
           'முழு சிமெண்ட் படுக்கை - ஒரு இடத்திலும் பொள்ளல் சத்தம் இருக்காது',
-          'லேசர் மட்டம் மூலம் காலில் தட்டாத பட்டுப் போன்ற மென்மையான தரை',
+          'சீரான மட்டம் மூலம் காலில் தட்டாத பட்டுப் போன்ற மென்மையான தரை',
           'இயற்கையான வடிகால் சரிவு - தண்ணீர் ஊற்றினால் உடனே வடிந்துவிடும்',
           '10 வருடங்களுக்கு நிறம் மாறாத நீர்புகா ரெசின் எப்பாக்ஸி க்ரௌட்டிங்',
           'நேரடி மேஸ்திரியின் நேரடி மேற்பார்வை மற்றும் உத்தரவாதமான வேலை'
@@ -195,14 +195,14 @@ export class AppComponent {
         processTitle: 'நாங்கள் வேலை செய்யும் 4 எளிய முறைகள்',
         processSubtitle: 'அளவீடு முதல் வேலை முடித்து ஒப்படைப்பது வரை எந்தவித மறைமுக கட்டணமும் இல்லாத தெளிவான சேவை.',
         step1Num: '01',
-        step1Title: 'நேரடி பார்வை & லேசர் அளவீடு',
+        step1Title: 'நேரடி பார்வை & துல்லிய அளவீடு',
         step1Desc: 'உங்கள் இடத்திற்கு நேரடியாக வந்து, தரை மட்டத்தை ஆய்வு செய்து, சரியான சதுர அடியை அளந்து டைல்ஸ் வீணாகாமல் திட்டமிடுவோம்.',
         step2Num: '02',
         step2Title: 'தெளிவான நிலையான மதிப்பீடு',
         step2Desc: 'கூலி விபரம், சிமெண்ட்/மணல்/அட்ஹெசிவ் தேவை மற்றும் வேலை முடியும் நாட்கள் ஆகியவற்றை வெளிப்படையாக தெரிவிப்போம்.',
         step3Num: '03',
         step3Title: 'நேர்த்தியான அனுபவமிக்க வேலைப்பாடு',
-        step3Desc: 'லேசர் மட்டம், சரியான சரிவு மற்றும் சீரான இடைவெளியுடன் எங்கள் அனுபவமிக்க குழுவினர் அமைதியாக, சுத்தமாக வேலை செய்வார்கள்.',
+        step3Desc: 'சரியான மட்டம், சரியான சரிவு மற்றும் சீரான இடைவெளியுடன் எங்கள் அனுபவமிக்க குழுவினர் அமைதியாக, சுத்தமாக வேலை செய்வார்கள்.',
         step4Num: '04',
         step4Title: 'எப்பாக்ஸி க்ரௌட்டிங் & சுத்தம் செய்து ஒப்படைப்பு',
         step4Desc: 'வாட்டர்ப்ரூஃப் எப்பாக்ஸி பூசி, முழு தரை மற்றும் சுவரை இயந்திரம் கொண்டு சுத்தம் செய்து உங்கள் கைகளில் நேர்த்தியாக ஒப்படைப்போம்.',
@@ -269,7 +269,7 @@ export class AppComponent {
       // Hero
       heroBadge: '🏆 25+ Years of Master Tile Craftsmanship in Chennai',
       heroHeadline: 'Flawless Tile Laying, Renovation & Alteration Works',
-      heroDesc: 'Specialist tile contractor undertaking new floor tiling, complete bathroom renovations, kitchen wall claddings, and terrace cooling tiles across Chennai. Direct contractor rates with laser-level precision and zero hollow tiles.',
+      heroDesc: 'Specialist tile contractor undertaking new floor tiling, complete bathroom renovations, kitchen wall claddings, and terrace cooling tiles across Chennai. Direct contractor rates with master precision, perfect flatness, and zero hollow tiles.',
       check1: 'Zero-Hollow Sound Guarantee',
       check2: 'Perfect Water Slope & Drainage',
       check3: 'Direct Contractor • Honest Rates',
@@ -297,8 +297,8 @@ export class AppComponent {
       expTitle: 'Why 25+ Years of Hands-on Experience Matters',
       expSubtitle: 'Tiling is not just sticking tiles with cement. Without experienced craftsmanship, tiles crack, sound hollow, leak into lower floors, and hold standing water. Here is what 25+ years of trade mastery guarantees:',
       feat1Icon: '📐',
-      feat1Title: 'Laser-Level Flatness & Zero Hollow Spots',
-      feat1Desc: 'We use high-precision cross-line laser levels and compact the mortar bed 100% underneath every tile, ensuring no hollow-knock sounds or cracking under heavy furniture.',
+      feat1Title: 'Perfect Surface Flatness & Zero Hollow Spots',
+      feat1Desc: 'We ensure accurate surface level alignment and compact the mortar bed 100% solidly underneath every tile, ensuring no hollow-knock sounds or cracking under heavy furniture.',
       feat1Badge: '✓ 100% Solid Mortar Bedding',
 
       feat2Icon: '🌊',
@@ -327,7 +327,7 @@ export class AppComponent {
       compGoodTitle: '✅ Ramya Tiles Work Contractor (25+ Yrs)',
       compGoodList: [
         'Full mortar buttering with zero hollow sounds',
-        'Laser leveling for silky smooth transition between tiles',
+        'Flawless surface leveling for silky smooth transition between tiles',
         'Perfect natural drainage slopes directly to outlets',
         'Epoxy resin grouting that stays clean for 10+ years',
         'Direct contractor on-site oversight and quality guarantee'
@@ -359,14 +359,14 @@ export class AppComponent {
       processTitle: 'How We Complete Your Tile Project',
       processSubtitle: 'Simple 4-step workflow ensuring zero surprises, accurate material estimates, and on-time completion.',
       step1Num: '01',
-      step1Title: 'Site Visit & Laser Measurement',
+      step1Title: 'Site Visit & Accurate Measurement',
       step1Desc: 'We visit your site in Chennai, check the existing floor level, inspect plumbing points, and measure exact square footage to avoid tile wastage.',
       step2Num: '02',
       step2Title: 'Transparent Fixed Quote',
       step2Desc: 'You receive a clear breakdown of labor charges, adhesive/sand requirements, and timeline. No hidden extras or surprise rate increases.',
       step3Num: '03',
       step3Title: 'Master Artisan Execution',
-      step3Desc: 'Our experienced craftsmen lay tiles with laser alignment, correct drainage slope, and even spacer joints, keeping the work area neat and orderly.',
+      step3Desc: 'Our experienced craftsmen lay tiles with precision alignment, correct drainage slope, and even spacer joints, keeping the work area neat and orderly.',
       step4Num: '04',
       step4Title: 'Epoxy Grouting & Final Polish',
       step4Desc: 'We finish with waterproof epoxy grouting, clean all tile surfaces thoroughly, conduct joint inspection, and hand over your pristine floor.',
@@ -425,17 +425,17 @@ export class AppComponent {
         popular: true,
         pricingTag: isTa ? 'விலை விபரம் கேட்க' : 'Ask for Quote',
         shortDesc: isTa
-          ? 'விட்ரிஃபைட், செராமிக் மற்றும் 2x4, 4x6 அடி பெரிய ஸ்லாப் டைல்ஸ்களை லேசர் மட்டம் பார்த்து துல்லியமாக பதித்தல்.'
-          : 'Vitrified, ceramic, and 2x4 / 4x6 ft large slab tile laying with laser leveling.',
+          ? 'விட்ரிஃபைட், செராமிக் மற்றும் 2x4, 4x6 அடி பெரிய ஸ்லாப் டைல்ஸ்களை சரியான மட்டம் பார்த்து துல்லியமாக பதித்தல்.'
+          : 'Vitrified, ceramic, and 2x4 / 4x6 ft large slab tile laying with precision leveling.',
         deliverables: isTa
           ? [
-              'தரை தளத்தை சுத்தம் செய்து லேசர் மூலம் மட்டம் பார்த்தல்',
+              'தரை தளத்தை சுத்தம் செய்து துல்லியமாக மட்டம் பார்த்தல்',
               'பொள்ளல் இல்லாத சீரான முழு சிமெண்ட் படுக்கை',
               'சுவர் ஓரங்களில் நேர்த்தியான ஸ்கர்டிங் மற்றும் பார்டர்',
               'வேலை முடிந்ததும் இயந்திரம் கொண்டு சுத்தம் செய்தல்'
             ]
           : [
-              'Floor sub-base cleaning and laser leveling',
+              'Floor sub-base cleaning and precision leveling',
               'Even joint spacing with zero hollow spots',
               'Custom edge skirting and border alignment',
               'Final machine cleaning and buffing'
@@ -615,8 +615,8 @@ export class AppComponent {
         tileType: isTa ? 'ஹை-கிளாஸ் கிளேஸ்டு விட்ரிஃபைட் (GVT)' : 'High-Gloss Glazed Vitrified (GVT)',
         size: isTa ? '1,250 சதுர அடி' : '1,250 sq.ft',
         description: isTa
-          ? 'லேசர் மட்டம் பார்க்கப்பட்ட ஹால் மற்றும் டைனிங் அறை, 1mm மெல்லிய மூட்டுகளுடன் பளபளப்பான பினிஷ்.'
-          : 'Laser-leveled living and dining room with paper-thin 1mm joints and seamless glossy finish.',
+          ? 'சீரான மட்டம் பார்க்கப்பட்ட ஹால் மற்றும் டைனிங் அறை, 1mm மெல்லிய மூட்டுகளுடன் பளபளப்பான பினிஷ்.'
+          : 'Precision-leveled living and dining room with paper-thin 1mm joints and seamless glossy finish.',
         tag: isTa ? 'புதிய தரை' : 'New Floor'
       },
       {
@@ -758,8 +758,8 @@ export class AppComponent {
           open: false
         },
         {
-          question: 'டைல்ஸுக்கு லேசர் மட்டம் மற்றும் சரிவு ஏன் முக்கியம்?',
-          answer: 'சரியான சரிவு இல்லாவிட்டால் தண்ணீர் தேங்கி பாசி பிடிக்கும், வீட்டில் வழுக்கி விழ நேரிடும். நாங்கள் லேசர் கருவி மற்றும் ஸ்பிரிட் லெவல் கொண்டு சரியான சரிவு வைப்பதால் ஒரு துளி தண்ணீர் கூட தேங்காது.',
+          question: 'டைல்ஸுக்கு சரியான மட்டம் மற்றும் சரிவு ஏன் முக்கியம்?',
+          answer: 'சரியான சரிவு இல்லாவிட்டால் தண்ணீர் தேங்கி பாசி பிடிக்கும், வீட்டில் வழுக்கி விழ நேரிடும். நாங்கள் வாட்டர் லெவல் மற்றும் ஸ்பிரிட் லெவல் கொண்டு சரியான சரிவு வைப்பதால் ஒரு துளி தண்ணீர் கூட தேங்காது.',
           open: false
         },
         {
@@ -787,8 +787,8 @@ export class AppComponent {
         open: false
       },
       {
-        question: 'Why is laser leveling and slope crucial for tiles?',
-        answer: 'Improper slopes cause water stagnation, slippery algae, and bathroom seepage into bedrooms. We use precise laser levels and spirit levels so water flows directly into the drain trap with zero puddles.',
+        question: 'Why is surface leveling and slope crucial for tiles?',
+        answer: 'Improper slopes cause water stagnation, slippery algae, and bathroom seepage into bedrooms. We use precise water levels and spirit levels so water flows directly into the drain trap with zero puddles.',
         open: false
       },
       {

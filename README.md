@@ -7,7 +7,7 @@ A modern, high-performance **Angular web application** for **Ramya Tiles Work Co
 ## ✨ Key Features
 
 - **🏆 25+ Years Experience Showcase**:
-  - Highlights master craftsman expertise, laser leveling, zero hollow sound guarantee, and precision water drainage slopes.
+  - Highlights master craftsman expertise, perfect surface leveling, zero hollow sound guarantee, and precision water drainage slopes.
   - Direct Contractor pricing (no broker or middleman commissions).
 - **🛠️ Comprehensive Service Spectrum**:
   - New Floor Tiling (Vitrified, Ceramic, Granite, Marble, Large Format 2x4 & 4x6 slabs)
