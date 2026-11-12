@@ -46,7 +46,7 @@ interface TestimonialItem {
 })
 export class AppComponent {
   // Business Profile Info
-  readonly businessName = 'Ramya Tiles Work Contractor';
+  readonly businessName = 'Ramya Tiles Laying Contractor';
   readonly phone = '+919840738347';
   readonly displayPhone = '+91 98407 38347';
   readonly whatsappNumber = '919789001872';
@@ -90,7 +90,7 @@ export class AppComponent {
         topBarText: 'சென்னையில் 25+ வருடங்கள் நம்பகமான டைல்ஸ் பதிக்கும் அனுபவம் • நேரடி ஒப்பந்தக்காரர்',
         directBadge: 'நேரடி மேஸ்திரி • புரோக்கர் இல்லை',
         brandName: 'ரம்யா டைல்ஸ்',
-        brandSub: 'டைல்ஸ் ஒட்டும் மேஸ்திரி • 25+ வருட அனுபவம்',
+        brandSub: 'டைல்ஸ் பதிக்கும் ஒப்பந்தக்காரர் • 25+ வருட அனுபவம்',
         navServices: 'சேவைகள்',
         navExperience: '25+ வருட அனுபவம்',
         navWork: 'செய்த வேலைகள்',
@@ -254,7 +254,7 @@ export class AppComponent {
       topBarText: 'Over 25+ Years of Trusted Tile Laying & Renovation Experience in Chennai • Direct Contractor',
       directBadge: 'Direct Contractor • No Middlemen',
       brandName: 'RAMYA TILES',
-      brandSub: 'WORK CONTRACTOR • 25+ YRS EXP',
+      brandSub: 'LAYING CONTRACTOR • 25+ YRS EXP',
       navServices: 'Services',
       navExperience: '25+ Yrs Experience',
       navWork: 'Our Work',

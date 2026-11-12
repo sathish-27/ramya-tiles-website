@@ -25,14 +25,8 @@
 <!-- Main Header / Navigation -->
 <header class="navbar">
   <div class="container nav-container">
-    <a href="#" class="brand-logo">
-      <div class="brand-icon">
-        <span class="tile-grid-icon">▦</span>
-      </div>
-      <div class="brand-text">
-        <span class="brand-name">{{ t.brandName }}</span>
-        <span class="brand-sub">{{ t.brandSub }}</span>
-      </div>
+    <a href="#" class="brand-logo" aria-label="Ramya Tiles Laying Contractor">
+      <img src="ramya-tiles-logo.png" alt="Ramya Tiles Laying Contractor" class="brand-logo-img" />
     </a>
 
     <!-- Desktop Navigation Links -->
@@ -160,6 +154,9 @@
     <div class="hero-visual">
       <div class="experience-card">
         <div class="card-glow"></div>
+        <div class="card-brand-box">
+          <img src="ramya-tiles-logo.png" alt="Ramya Tiles Laying Contractor" class="card-brand-img" />
+        </div>
         <div class="exp-badge-large">
           <span class="exp-big">25+</span>
           <span class="exp-sub">{{ t.expCardBadge }}</span>
@@ -540,9 +537,8 @@
 <footer class="footer">
   <div class="container footer-content">
     <div class="footer-brand">
-      <div class="brand-logo footer-logo">
-        <span class="tile-grid-icon">▦</span>
-        <span class="brand-name">{{ t.brandName }}</span>
+      <div class="footer-logo-box">
+        <img src="ramya-tiles-logo.png" alt="Ramya Tiles Laying Contractor" class="footer-logo-img" />
       </div>
       <p class="footer-desc">
         {{ t.footerDesc }}
