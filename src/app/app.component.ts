@@ -68,7 +68,7 @@ export class AppComponent {
       badge: 'High Demand',
       popular: true,
       pricingTag: 'Ask for Quote',
-      shortDesc: 'Vitrified, ceramic, Italian marble-finish, and 2x4 / 4x6 ft large slab laying with laser leveling.',
+      shortDesc: 'Vitrified, ceramic, and 2x4 / 4x6 ft large slab tile laying with laser leveling.',
       deliverables: [
         'Floor sub-base cleaning and laser leveling',
         'Even joint spacing with zero hollow spots',
@@ -96,7 +96,7 @@ export class AppComponent {
       title: 'Kitchen & Backsplash Tiling',
       icon: '🍳',
       pricingTag: 'Ask for Quote',
-      shortDesc: 'Heat, stain, and oil-resistant wall tiles, granite counter finishing, and modern mosaic patterns.',
+      shortDesc: 'Heat, stain, and oil-resistant wall tiles, kitchen counter edge tile finishing, and modern mosaic patterns.',
       deliverables: [
         'Heat-resistant backsplash wall installation',
         'Countertop edge profiling & tile joint sealing',
@@ -174,75 +174,6 @@ export class AppComponent {
     }
   ];
 
-  // Interactive Quote Requester Model (Varies Case by Case)
-  calcService = 'floor';
-  calcArea: number = 500;
-  customRate: number | null = 45; // Customer entered rate in ₹/sq.ft
-  calcScope = 'labor'; // 'labor' or 'labor-material'
-  calcDemolition = false;
-  calcWaterproofing = false;
-  calcEpoxyGrout = false;
-
-  get calculatedTotal(): number {
-    const area = Number(this.calcArea) || 0;
-    const rate = Number(this.customRate) || 0;
-    return Math.round(area * rate);
-  }
-
-  setRatePreset(rate: number): void {
-    this.customRate = rate;
-  }
-
-  get estimatedDays(): string {
-    const area = Number(this.calcArea) || 0;
-    if (area <= 200) return '1 - 2 Days';
-    if (area <= 500) return '2 - 4 Days';
-    if (area <= 1000) return '4 - 7 Days';
-    return '7 - 12 Days';
-  }
-
-  getServiceLabel(type: string): string {
-    switch (type) {
-      case 'floor': return 'New Floor Tiling';
-      case 'bathroom': return 'Bathroom Renovation & Tiling';
-      case 'kitchen': return 'Kitchen Wall & Floor Tiling';
-      case 'terrace': return 'Terrace Cooling Tiles';
-      case 'parking': return 'Parking & Heavy Duty Tiling';
-      case 'repair': return 'Alteration & Tile Repair';
-      default: return 'General Tile Laying';
-    }
-  }
-
-  setAreaPreset(area: number): void {
-    this.calcArea = area;
-  }
-
-  generateCalculatorWhatsAppUrl(): string {
-    const serviceName = this.getServiceLabel(this.calcService);
-    const scopeName = this.calcScope === 'labor' ? 'Labor Only' : 'Labor + Cement/Adhesive Materials';
-    const addonsList: string[] = [];
-    if (this.calcDemolition) addonsList.push('Old Tile Demolition');
-    if (this.calcWaterproofing) addonsList.push('Double Waterproofing');
-    if (this.calcEpoxyGrout) addonsList.push('Epoxy Grouting');
-
-    const addonsText = addonsList.length > 0 ? addonsList.join(', ') : 'None';
-    const rateText = this.customRate && this.customRate > 0 ? `₹${this.customRate} / sq.ft` : 'To be quoted';
-    const totalText = this.calculatedTotal > 0 ? `₹${this.calculatedTotal.toLocaleString('en-IN')}` : 'To be quoted';
-
-    const message = `Vanakkam Sir, I would like to get a quote for my tile project:
-- *Service*: ${serviceName}
-- *Approx Area*: ${this.calcArea} sq.ft
-- *Client Expected Rate*: ${rateText}
-- *Calculated Total*: ${totalText}
-- *Work Scope*: ${scopeName}
-- *Requirements*: ${addonsText}
-- *Estimated Duration*: ~${this.estimatedDays}
-
-Please let me know your availability for site inspection to confirm the rate and work schedule.`;
-
-    return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
-  }
-
   // Portfolio Projects
   activeGalleryTab: 'all' | 'bathrooms' | 'living' | 'kitchen' | 'terrace' | 'commercial' = 'all';
 
@@ -254,7 +185,7 @@ Please let me know your availability for site inspection to confirm the rate and
       location: 'Anna Nagar, Chennai',
       tileType: 'High-Gloss Glazed Vitrified (GVT)',
       size: '1,250 sq.ft',
-      description: 'Laser-leveled living and dining room with paper-thin 1mm joints and seamless bookmatched marble veins.',
+      description: 'Laser-leveled living and dining room with paper-thin 1mm joints and seamless glossy finish.',
       tag: 'New Floor'
     },
     {
