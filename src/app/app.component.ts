@@ -8,7 +8,7 @@ interface ServiceItem {
   badge?: string;
   icon: string;
   shortDesc: string;
-  rateRange: string;
+  pricingTag: string;
   deliverables: string[];
   popular?: boolean;
 }
@@ -67,7 +67,7 @@ export class AppComponent {
       icon: '🏠',
       badge: 'High Demand',
       popular: true,
-      rateRange: '₹35 - ₹65 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Vitrified, ceramic, Italian marble-finish, and 2x4 / 4x6 ft large slab laying with laser leveling.',
       deliverables: [
         'Floor sub-base cleaning and laser leveling',
@@ -82,7 +82,7 @@ export class AppComponent {
       icon: '🚿',
       badge: 'Specialist',
       popular: true,
-      rateRange: '₹55 - ₹95 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Complete bathroom overhaul: old tile removal, double chemical waterproofing, and anti-skid safety tiles.',
       deliverables: [
         'Zero-leak chemical waterproofing membrane',
@@ -95,7 +95,7 @@ export class AppComponent {
       id: 'kitchen-tiles',
       title: 'Kitchen & Backsplash Tiling',
       icon: '🍳',
-      rateRange: '₹45 - ₹85 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Heat, stain, and oil-resistant wall tiles, granite counter finishing, and modern mosaic patterns.',
       deliverables: [
         'Heat-resistant backsplash wall installation',
@@ -109,7 +109,7 @@ export class AppComponent {
       title: 'Alterations & Demolition',
       icon: '🔨',
       badge: '25+ Yrs Skill',
-      rateRange: '₹20 - ₹35 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Careful removal of broken or outdated tiles without cracking underlying concrete slabs or pipelines.',
       deliverables: [
         'Safe mechanical chipping of old tiles',
@@ -122,7 +122,7 @@ export class AppComponent {
       id: 'tile-repair',
       title: 'Hollow & Cracked Tile Repair',
       icon: '🩹',
-      rateRange: '₹250 - ₹600 / area',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Fix loose, popping, or hollow tiles cleanly without demolishing your whole room floor.',
       deliverables: [
         'Single tile extraction without damaging neighbors',
@@ -136,7 +136,7 @@ export class AppComponent {
       title: 'Terrace Cooling Weathering Tiles',
       icon: '☀️',
       badge: 'Summer Saver',
-      rateRange: '₹40 - ₹70 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Solar-reflective white tiles & terracotta tiles that reduce top-floor heat by 4°C to 7°C.',
       deliverables: [
         'Roof terrace waterproof base prep',
@@ -149,7 +149,7 @@ export class AppComponent {
       id: 'parking-paver',
       title: 'Parking & Exterior Heavy-Duty Tiles',
       icon: '🚗',
-      rateRange: '₹35 - ₹60 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: 'Tough, load-bearing vitrified parking tiles and interlocking pavers built for cars and rain.',
       deliverables: [
         'Heavy vehicle load-bearing base compaction',
@@ -163,7 +163,7 @@ export class AppComponent {
       title: 'Waterproof Epoxy Grouting',
       icon: '💎',
       badge: '100% Waterproof',
-      rateRange: '₹15 - ₹25 / sq.ft',
+      pricingTag: 'Ask for Quote',
       shortDesc: '2-component resin epoxy grout that never turns yellow or black, fully resistant to fungus and water seepage.',
       deliverables: [
         'Joint groove deep raking & vacuuming',
@@ -174,63 +174,13 @@ export class AppComponent {
     }
   ];
 
-  // Interactive Cost Calculator Model
+  // Interactive Quote Requester Model (Varies Case by Case)
   calcService = 'floor';
   calcArea: number = 500;
   calcScope = 'labor'; // 'labor' or 'labor-material'
   calcDemolition = false;
   calcWaterproofing = false;
   calcEpoxyGrout = false;
-
-  get baseRatePerSqFt(): number {
-    switch (this.calcService) {
-      case 'floor':
-        return this.calcScope === 'labor' ? 45 : 75;
-      case 'bathroom':
-        return this.calcScope === 'labor' ? 65 : 110;
-      case 'kitchen':
-        return this.calcScope === 'labor' ? 55 : 95;
-      case 'terrace':
-        return this.calcScope === 'labor' ? 50 : 85;
-      case 'parking':
-        return this.calcScope === 'labor' ? 42 : 72;
-      case 'repair':
-        return this.calcScope === 'labor' ? 35 : 55;
-      default:
-        return 45;
-    }
-  }
-
-  get baseCost(): number {
-    const area = Number(this.calcArea) || 0;
-    return Math.round(area * this.baseRatePerSqFt);
-  }
-
-  get demolitionCost(): number {
-    if (!this.calcDemolition) return 0;
-    const area = Number(this.calcArea) || 0;
-    return Math.round(area * 20);
-  }
-
-  get waterproofingCost(): number {
-    if (!this.calcWaterproofing) return 0;
-    const area = Number(this.calcArea) || 0;
-    return Math.round(area * 25);
-  }
-
-  get epoxyGroutingCost(): number {
-    if (!this.calcEpoxyGrout) return 0;
-    const area = Number(this.calcArea) || 0;
-    return Math.round(area * 18);
-  }
-
-  get totalAddonsCost(): number {
-    return this.demolitionCost + this.waterproofingCost + this.epoxyGroutingCost;
-  }
-
-  get totalEstimatedCost(): number {
-    return this.baseCost + this.totalAddonsCost;
-  }
 
   get estimatedDays(): string {
     const area = Number(this.calcArea) || 0;
@@ -266,15 +216,14 @@ export class AppComponent {
 
     const addonsText = addonsList.length > 0 ? addonsList.join(', ') : 'None';
 
-    const message = `Vanakkam Sir, I checked your website cost calculator:
+    const message = `Vanakkam Sir, I would like to get a quote for my tile project:
 - *Service*: ${serviceName}
 - *Approx Area*: ${this.calcArea} sq.ft
 - *Work Scope*: ${scopeName}
-- *Add-ons*: ${addonsText}
-- *Estimated Cost*: ₹${this.totalEstimatedCost.toLocaleString('en-IN')}
-- *Estimated Time*: ${this.estimatedDays}
+- *Requirements*: ${addonsText}
+- *Estimated Duration*: ~${this.estimatedDays}
 
-Please let me know when you can visit my site for final measurement and confirmation.`;
+Please let me know your price estimate or when you can inspect the site for confirmation.`;
 
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
   }

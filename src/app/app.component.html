@@ -11,7 +11,7 @@
         <span>{{ displayPhone }}</span>
       </a>
       <span class="divider">|</span>
-      <span class="direct-badge">Direct Contractor • No Middlemen</span>
+      <span class="direct-badge">Direct Contractor • Quotes on Request</span>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
     <nav class="nav-links">
       <a href="#services" class="nav-item">Services</a>
       <a href="#experience" class="nav-item">25+ Yrs Experience</a>
-      <a href="#calculator" class="nav-item">Cost Estimator</a>
+      <a href="#calculator" class="nav-item">Get Quote</a>
       <a href="#gallery" class="nav-item">Our Work</a>
       <a href="#why-us" class="nav-item">Why Choose Us</a>
       <a href="#faq" class="nav-item">FAQs</a>
@@ -63,7 +63,7 @@
     <div class="mobile-links">
       <a href="#services" (click)="closeMobileMenu()">Services</a>
       <a href="#experience" (click)="closeMobileMenu()">25+ Yrs Experience</a>
-      <a href="#calculator" (click)="closeMobileMenu()">Cost Calculator</a>
+      <a href="#calculator" (click)="closeMobileMenu()">Get Custom Quote</a>
       <a href="#gallery" (click)="closeMobileMenu()">Our Work</a>
       <a href="#why-us" (click)="closeMobileMenu()">Why Choose Us</a>
       <a href="#faq" (click)="closeMobileMenu()">FAQs</a>
@@ -110,7 +110,7 @@
       <!-- Hero Call To Actions -->
       <div class="hero-buttons">
         <a href="#calculator" class="btn btn-gold btn-large">
-          <span>Instant Cost Calculator</span>
+          <span>Get Custom Quote</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello,%20I%20would%20like%20to%20consult%20for%20my%20tile%20laying%20work.'" target="_blank" class="btn btn-whatsapp btn-large">
@@ -259,7 +259,7 @@
       <span class="section-tag">All Tiling Solutions</span>
       <h2 class="section-title">Comprehensive Tiling & Renovation Services</h2>
       <p class="section-subtitle">
-        From new apartment floors to complete bathroom renovations and delicate alteration repairs — we undertake all residential and commercial tile works.
+        From new apartment floors to complete bathroom renovations and delicate alteration repairs — we undertake all residential and commercial tile works. Pricing is tailored case-by-case based on tile size, site condition & design.
       </p>
     </div>
 
@@ -267,7 +267,7 @@
       <div class="service-card" *ngFor="let s of services" [class.featured-card]="s.popular">
         <div class="card-header-strip">
           <span class="service-badge" *ngIf="s.badge">{{ s.badge }}</span>
-          <span class="service-rate">{{ s.rateRange }}</span>
+          <span class="service-rate-badge">{{ s.pricingTag }}</span>
         </div>
         <div class="service-icon-box">{{ s.icon }}</div>
         <h3 class="service-title">{{ s.title }}</h3>
@@ -284,8 +284,8 @@
         </div>
 
         <div class="service-card-action">
-          <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello%20Ramya%20Tiles,%20I%20am%20interested%20in%20' + s.title + '%20services.'" target="_blank" class="btn btn-outline" style="width: 100%;">
-            Get Free Quote for This Work
+          <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello%20Ramya%20Tiles,%20I%20want%20to%20ask%20quote%20for%20' + s.title + '%20work.'" target="_blank" class="btn btn-outline" style="width: 100%;">
+            Ask for Free Quote
           </a>
         </div>
       </div>
@@ -293,15 +293,15 @@
   </div>
 </section>
 
-<!-- Interactive Cost Calculator Section -->
+<!-- Interactive Project Scope & Quote Request Section -->
 <section id="calculator" class="section calculator-section">
   <div class="container">
     <div class="calculator-wrapper">
       <div class="calc-header text-center">
-        <span class="section-tag gold">Interactive Estimator</span>
-        <h2 class="section-title">Instant Tile Project Cost Calculator</h2>
+        <span class="section-tag gold">Instant Project Scope</span>
+        <h2 class="section-title">Request a Custom Tiling Quote</h2>
         <p class="section-subtitle">
-          Calculate your estimated budget in 30 seconds. Choose your service, area, and options to get an instant transparent breakdown.
+          Because every home is unique, tile laying rates vary case-by-case depending on tile dimensions, subfloor leveling, and room layout. Select your project parameters below to ask our contractor for an exact quote.
         </p>
       </div>
 
@@ -316,42 +316,42 @@
                 <input type="radio" name="calcService" value="floor" [(ngModel)]="calcService">
                 <span class="radio-icon">🏠</span>
                 <span class="radio-title">New Floor</span>
-                <span class="radio-rate">₹45/sq.ft</span>
+                <span class="radio-sub">Floors & Halls</span>
               </label>
 
               <label class="radio-card" [class.selected]="calcService === 'bathroom'">
                 <input type="radio" name="calcService" value="bathroom" [(ngModel)]="calcService">
                 <span class="radio-icon">🚿</span>
                 <span class="radio-title">Bathroom</span>
-                <span class="radio-rate">₹65/sq.ft</span>
+                <span class="radio-sub">Walls & Anti-Skid</span>
               </label>
 
               <label class="radio-card" [class.selected]="calcService === 'kitchen'">
                 <input type="radio" name="calcService" value="kitchen" [(ngModel)]="calcService">
                 <span class="radio-icon">🍳</span>
                 <span class="radio-title">Kitchen</span>
-                <span class="radio-rate">₹55/sq.ft</span>
+                <span class="radio-sub">Backsplash & Slab</span>
               </label>
 
               <label class="radio-card" [class.selected]="calcService === 'terrace'">
                 <input type="radio" name="calcService" value="terrace" [(ngModel)]="calcService">
                 <span class="radio-icon">☀️</span>
                 <span class="radio-title">Terrace Cool</span>
-                <span class="radio-rate">₹50/sq.ft</span>
+                <span class="radio-sub">Heat Reflective</span>
               </label>
 
               <label class="radio-card" [class.selected]="calcService === 'parking'">
                 <input type="radio" name="calcService" value="parking" [(ngModel)]="calcService">
                 <span class="radio-icon">🚗</span>
                 <span class="radio-title">Parking</span>
-                <span class="radio-rate">₹42/sq.ft</span>
+                <span class="radio-sub">Heavy Load Vitrified</span>
               </label>
 
               <label class="radio-card" [class.selected]="calcService === 'repair'">
                 <input type="radio" name="calcService" value="repair" [(ngModel)]="calcService">
                 <span class="radio-icon">🔨</span>
                 <span class="radio-title">Alteration</span>
-                <span class="radio-rate">₹35/sq.ft</span>
+                <span class="radio-sub">Chipping & Repair</span>
               </label>
             </div>
           </div>
@@ -406,7 +406,7 @@
                   <span class="addon-name">Old Tile Demolition & Debris Disposal</span>
                   <span class="addon-desc">Safe chipping, floor screed level, and tractor debris removal</span>
                 </div>
-                <span class="addon-price">+₹20 / sq.ft</span>
+                <span class="addon-check-tag">Optional</span>
               </label>
 
               <label class="addon-item" [class.checked]="calcWaterproofing">
@@ -415,7 +415,7 @@
                   <span class="addon-name">2-Coat Chemical Waterproofing</span>
                   <span class="addon-desc">Recommended for bathrooms and terrace roofs to stop leaks</span>
                 </div>
-                <span class="addon-price">+₹25 / sq.ft</span>
+                <span class="addon-check-tag">Optional</span>
               </label>
 
               <label class="addon-item" [class.checked]="calcEpoxyGrout">
@@ -424,7 +424,7 @@
                   <span class="addon-name">Stain-Proof Epoxy Grouting</span>
                   <span class="addon-desc">High-strength resin joint filling that never turns black or leaks</span>
                 </div>
-                <span class="addon-price">+₹18 / sq.ft</span>
+                <span class="addon-check-tag">Optional</span>
               </label>
             </div>
           </div>
@@ -433,48 +433,64 @@
         <!-- Result Column -->
         <div class="calc-result-panel">
           <div class="result-card">
-            <div class="result-badge">Estimate Summary</div>
+            <div class="result-badge">Custom Quote Scope</div>
             <div class="result-service-name">{{ getServiceLabel(calcService) }}</div>
-            <div class="result-area-tag">{{ calcArea }} sq.ft • {{ calcScope === 'labor' ? 'Labor Only' : 'Labor + Mortar' }}</div>
+            <div class="result-area-tag">{{ calcArea }} sq.ft • {{ calcScope === 'labor' ? 'Master Labor Only' : 'Labor + Mortar/Adhesive' }}</div>
 
-            <div class="price-hero">
-              <span class="rupee-symbol">₹</span>
-              <span class="price-amount">{{ totalEstimatedCost.toLocaleString('en-IN') }}</span>
-              <span class="price-approx">*Approx</span>
+            <!-- Case by case pricing explanation box -->
+            <div class="case-by-case-box">
+              <div class="case-badge">
+                <span class="case-icon">📋</span>
+                <span>Case-by-Case Pricing</span>
+              </div>
+              <h4 class="case-title">Ask for Exact Quote</h4>
+              <p class="case-desc">
+                Tiling rates vary based on your tile dimensions (e.g. 2x2 vs 4x6 large slabs), leveling thickness, and old flooring condition. Send your details to get a free site inspection & exact quote.
+              </p>
             </div>
 
-            <!-- Cost breakdown -->
+            <!-- Summary specifications -->
             <div class="breakdown-list">
               <div class="breakdown-row">
-                <span>Base Work ({{ calcArea }} sq.ft &#64; ₹{{ baseRatePerSqFt }}/sq.ft):</span>
-                <strong>₹{{ baseCost.toLocaleString('en-IN') }}</strong>
+                <span>Selected Area:</span>
+                <strong>{{ calcArea }} sq.ft</strong>
+              </div>
+
+              <div class="breakdown-row">
+                <span>Execution Type:</span>
+                <strong>{{ calcScope === 'labor' ? 'Craftsmanship Labor Only' : 'Labor + Adhesives/Mortar' }}</strong>
               </div>
 
               <div class="breakdown-row" *ngIf="calcDemolition">
-                <span>Tile Demolition & Debris Clearing:</span>
-                <strong>₹{{ demolitionCost.toLocaleString('en-IN') }}</strong>
+                <span>Old Tile Chipping:</span>
+                <strong class="addon-active-tag">✓ Included in Request</strong>
               </div>
 
               <div class="breakdown-row" *ngIf="calcWaterproofing">
-                <span>Double Waterproofing Membrane:</span>
-                <strong>₹{{ waterproofingCost.toLocaleString('en-IN') }}</strong>
+                <span>Dual Waterproofing:</span>
+                <strong class="addon-active-tag">✓ Included in Request</strong>
               </div>
 
               <div class="breakdown-row" *ngIf="calcEpoxyGrout">
-                <span>Waterproof Epoxy Grouting:</span>
-                <strong>₹{{ epoxyGroutingCost.toLocaleString('en-IN') }}</strong>
+                <span>Epoxy Resin Grouting:</span>
+                <strong class="addon-active-tag">✓ Included in Request</strong>
               </div>
 
               <div class="breakdown-row time-row">
                 <span>Estimated Work Duration:</span>
                 <strong class="time-badge">⏱️ {{ estimatedDays }}</strong>
               </div>
+
+              <div class="breakdown-row free-visit-row">
+                <span>Site Visit & Measurement:</span>
+                <strong class="free-pill">100% FREE</strong>
+              </div>
             </div>
 
             <div class="calc-actions">
               <a [href]="generateCalculatorWhatsAppUrl()" target="_blank" class="btn btn-whatsapp btn-large" style="width: 100%;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-                <span>Send Estimate to WhatsApp</span>
+                <span>Ask Contractor for Quote on WhatsApp</span>
               </a>
               <a [href]="'tel:' + phone" class="btn btn-outline" style="width: 100%; margin-top: 0.75rem;">
                 Call Contractor Directly: {{ displayPhone }}
@@ -482,7 +498,7 @@
             </div>
 
             <p class="calc-note">
-              *Estimates are indicative. Exact price will be confirmed after on-site measurement and tile inspection. Site visits in Chennai are complimentary.
+              *Direct contractor pricing with zero broker fees. Final quote is given after laser measuring your site and inspecting tile selection.
             </p>
           </div>
         </div>

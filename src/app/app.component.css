@@ -710,10 +710,16 @@
   border-radius: var(--radius-full);
 }
 
-.service-rate {
-  font-size: 0.85rem;
+.service-rate-badge {
+  background: var(--accent-gold-light);
+  color: #92400e;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--emerald-600);
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  letter-spacing: 0.03em;
 }
 
 .service-icon-box {
@@ -867,10 +873,11 @@
   color: var(--gray-900);
 }
 
-.radio-rate {
-  font-size: 0.75rem;
-  color: var(--emerald-600);
+.radio-sub {
+  font-size: 0.72rem;
+  color: var(--gray-500);
   font-weight: 600;
+  margin-top: 0.15rem;
 }
 
 .area-label-row {
@@ -1011,10 +1018,13 @@
   color: var(--gray-500);
 }
 
-.addon-price {
-  font-size: 0.82rem;
+.addon-check-tag {
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--emerald-600);
+  color: var(--primary-600);
+  background: var(--primary-50);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
 }
 
@@ -1056,33 +1066,37 @@
   margin-bottom: 1.25rem;
 }
 
-.price-hero {
-  display: flex;
-  align-items: baseline;
+/* Case By Case Box */
+.case-by-case-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.case-badge {
+  display: inline-flex;
+  align-items: center;
   gap: 0.35rem;
-  padding: 1.25rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  margin-bottom: 1.25rem;
-}
-
-.rupee-symbol {
-  font-size: 1.8rem;
-  font-weight: 700;
   color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 
-.price-amount {
-  font-family: var(--font-heading);
-  font-size: 2.8rem;
-  font-weight: 800;
+.case-title {
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--white);
-  line-height: 1;
+  margin-bottom: 0.4rem;
 }
 
-.price-approx {
-  font-size: 0.85rem;
-  color: var(--gray-400);
+.case-desc {
+  font-size: 0.8rem;
+  color: var(--gray-300);
+  line-height: 1.45;
 }
 
 .breakdown-list {
@@ -1104,10 +1118,28 @@
   color: var(--white);
 }
 
-.time-row {
+.addon-active-tag {
+  color: var(--emerald-400) !important;
+  font-weight: 700;
+}
+
+.free-visit-row {
   padding-top: 0.65rem;
   border-top: 1px dashed rgba(255, 255, 255, 0.15);
   margin-top: 0.35rem;
+}
+
+.free-pill {
+  background: var(--emerald-500);
+  color: var(--white) !important;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.time-row {
+  padding-top: 0.5rem;
 }
 
 .time-badge {
