@@ -42,8 +42,8 @@ export class AppComponent {
   readonly businessName = 'Ramya Tiles Work Contractor';
   readonly founderTitle = 'Master Tile Laying Contractor';
   readonly experienceYears = '25+';
-  readonly phone = '+9198407388347';
-  readonly displayPhone = '+91 98407 388347';
+  readonly phone = '+919840738347';
+  readonly displayPhone = '+91 98407 38347';
   readonly whatsappNumber = '919789001872';
   readonly displayWhatsApp = '+91 97890 01872';
   readonly serviceLocation = 'Chennai, Tamil Nadu (All Areas Covered)';
