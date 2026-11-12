@@ -40,3 +40,18 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Additional editor files
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+
+build/
+
+.env
+.env.local
