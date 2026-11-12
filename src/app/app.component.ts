@@ -177,10 +177,21 @@ export class AppComponent {
   // Interactive Quote Requester Model (Varies Case by Case)
   calcService = 'floor';
   calcArea: number = 500;
+  customRate: number | null = 45; // Customer entered rate in ₹/sq.ft
   calcScope = 'labor'; // 'labor' or 'labor-material'
   calcDemolition = false;
   calcWaterproofing = false;
   calcEpoxyGrout = false;
+
+  get calculatedTotal(): number {
+    const area = Number(this.calcArea) || 0;
+    const rate = Number(this.customRate) || 0;
+    return Math.round(area * rate);
+  }
+
+  setRatePreset(rate: number): void {
+    this.customRate = rate;
+  }
 
   get estimatedDays(): string {
     const area = Number(this.calcArea) || 0;
@@ -215,15 +226,19 @@ export class AppComponent {
     if (this.calcEpoxyGrout) addonsList.push('Epoxy Grouting');
 
     const addonsText = addonsList.length > 0 ? addonsList.join(', ') : 'None';
+    const rateText = this.customRate && this.customRate > 0 ? `₹${this.customRate} / sq.ft` : 'To be quoted';
+    const totalText = this.calculatedTotal > 0 ? `₹${this.calculatedTotal.toLocaleString('en-IN')}` : 'To be quoted';
 
     const message = `Vanakkam Sir, I would like to get a quote for my tile project:
 - *Service*: ${serviceName}
 - *Approx Area*: ${this.calcArea} sq.ft
+- *Client Expected Rate*: ${rateText}
+- *Calculated Total*: ${totalText}
 - *Work Scope*: ${scopeName}
 - *Requirements*: ${addonsText}
 - *Estimated Duration*: ~${this.estimatedDays}
 
-Please let me know your price estimate or when you can inspect the site for confirmation.`;
+Please let me know your availability for site inspection to confirm the rate and work schedule.`;
 
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
   }

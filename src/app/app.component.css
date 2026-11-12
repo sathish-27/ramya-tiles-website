@@ -930,6 +930,98 @@
   border-color: var(--primary-600);
 }
 
+/* Customer Rate Input */
+.rate-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.rate-display-badge {
+  background-color: var(--accent-amber);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.rate-input-container {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 2px solid var(--primary-500);
+  border-radius: var(--radius-md);
+  padding: 0.25rem 0.85rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+}
+
+.rate-input-prefix {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-700);
+  margin-right: 0.4rem;
+}
+
+.custom-rate-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  padding: 0.45rem 0;
+}
+
+.rate-input-suffix {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  margin-left: 0.4rem;
+}
+
+.rate-presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.preset-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.rate-chip {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rate-chip.active, .rate-chip:hover {
+  background: var(--accent-amber);
+  color: var(--white);
+  border-color: var(--accent-amber);
+}
+
+.rate-helper-note {
+  font-size: 0.76rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
 .scope-toggle-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1064,6 +1156,90 @@
   font-size: 0.85rem;
   color: var(--gray-400);
   margin-bottom: 1.25rem;
+}
+
+/* Calculated Price Hero */
+.calculated-price-hero {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.calc-hero-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold-light);
+  margin-bottom: 0.25rem;
+}
+
+.calc-hero-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.hero-rupee {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+}
+
+.hero-amount {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+}
+
+.calc-hero-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray-300);
+  margin-top: 0.25rem;
+}
+
+.no-rate-hero {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.no-rate-icon {
+  font-size: 1.4rem;
+}
+
+.no-rate-hero strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--white);
+}
+
+.no-rate-hero small {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+.text-gold-large {
+  color: var(--accent-gold) !important;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 /* Case By Case Box */
