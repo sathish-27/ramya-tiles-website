@@ -481,7 +481,7 @@
             <div class="c-icon">💬</div>
             <div>
               <span class="c-label">WhatsApp Quick Chat</span>
-              <strong class="c-val">+91 98765 43210 (Instant Reply)</strong>
+              <strong class="c-val">{{ displayWhatsApp }} (Instant Reply)</strong>
             </div>
           </a>
 
@@ -517,7 +517,7 @@
 
             <div class="form-group">
               <label>Phone Number *</label>
-              <input type="tel" [(ngModel)]="bookingData.phone" name="phone" placeholder="e.g. 9876543210" required class="form-control">
+              <input type="tel" [(ngModel)]="bookingData.phone" name="phone" placeholder="e.g. 9840123456" required class="form-control">
             </div>
 
             <div class="form-row">
@@ -573,7 +573,8 @@
         Specialist Tile Laying Contractor in Chennai with over 25+ years of hands-on experience in residential, apartment, and commercial tiling. Master craftsmanship with direct contractor pricing.
       </p>
       <div class="footer-contact-snippet">
-        <div><strong>Call / WhatsApp:</strong> {{ displayPhone }}</div>
+        <div><strong>Direct Call:</strong> {{ displayPhone }}</div>
+        <div><strong>WhatsApp:</strong> {{ displayWhatsApp }}</div>
         <div><strong>Location:</strong> Chennai, Tamil Nadu</div>
       </div>
     </div>
