@@ -34,6 +34,31 @@
   gap: 0.75rem;
 }
 
+.top-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: var(--white);
+  padding: 0.22rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.top-lang-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.top-lang-btn strong {
+  font-weight: 700;
+}
+
 .top-link {
   display: inline-flex;
   align-items: center;
@@ -152,6 +177,39 @@
   gap: 0.65rem;
 }
 
+.lang-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--primary-50);
+  border: 1.5px solid var(--primary-200);
+  color: var(--primary-900);
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.lang-toggle-pill:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-400);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-globe {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.lang-text {
+  letter-spacing: 0.2px;
+}
+
 .nav-whatsapp-btn {
   display: none;
   padding: 0.55rem 1rem;
@@ -210,6 +268,35 @@
 
 .mobile-drawer.open {
   display: block;
+}
+
+.mobile-lang-row {
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.mobile-lang-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--primary-50);
+  border: 1.5px solid var(--primary-200);
+  color: var(--primary-900);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.mobile-lang-btn:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-500);
 }
 
 .mobile-links {

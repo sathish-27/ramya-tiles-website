@@ -3,15 +3,21 @@
   <div class="container top-bar-content">
     <div class="top-bar-left">
       <span class="star-badge">★</span>
-      <span>Over <strong>25+ Years</strong> of Trusted Tile Laying & Renovation Experience in Chennai</span>
+      <span>{{ t.topBarText }}</span>
     </div>
     <div class="top-bar-right">
+      <!-- Language Switcher in Top Bar -->
+      <button class="top-lang-btn" (click)="toggleLanguage()" aria-label="Toggle language">
+        <span class="globe-icon">🌐</span>
+        <strong>{{ t.langBtnLabel }}</strong>
+      </button>
+      <span class="divider">|</span>
       <a [href]="'tel:' + phone" class="top-link">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         <span>{{ displayPhone }}</span>
       </a>
       <span class="divider">|</span>
-      <span class="direct-badge">Direct Contractor • Quotes on Request</span>
+      <span class="direct-badge">{{ t.directBadge }}</span>
     </div>
   </div>
 </div>
@@ -24,31 +30,39 @@
         <span class="tile-grid-icon">▦</span>
       </div>
       <div class="brand-text">
-        <span class="brand-name">RAMYA TILES</span>
-        <span class="brand-sub">WORK CONTRACTOR • 25+ YRS EXP</span>
+        <span class="brand-name">{{ t.brandName }}</span>
+        <span class="brand-sub">{{ t.brandSub }}</span>
       </div>
     </a>
 
     <!-- Desktop Navigation Links -->
     <nav class="nav-links">
-      <a href="#services" class="nav-item">Services</a>
-      <a href="#experience" class="nav-item">25+ Yrs Experience</a>
-      <a href="#gallery" class="nav-item">Our Work</a>
-      <a href="#why-us" class="nav-item">Why Choose Us</a>
-      <a href="#faq" class="nav-item">FAQs</a>
-      <a href="#contact" class="nav-item">Book Site Visit</a>
+      <a href="#services" class="nav-item">{{ t.navServices }}</a>
+      <a href="#experience" class="nav-item">{{ t.navExperience }}</a>
+      <a href="#gallery" class="nav-item">{{ t.navWork }}</a>
+      <a href="#why-us" class="nav-item">{{ t.navWhyUs }}</a>
+      <a href="#faq" class="nav-item">{{ t.navFaq }}</a>
+      <a href="#contact" class="nav-item">{{ t.navContact }}</a>
     </nav>
 
     <!-- Nav Action Buttons -->
     <div class="nav-actions">
-      <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello%20Ramya%20Tiles,%20I%20need%20a%20quote%20for%20tile%20work.'" target="_blank" class="btn btn-whatsapp nav-whatsapp-btn">
+      <!-- Language Toggle Button -->
+      <button class="lang-toggle-pill" (click)="toggleLanguage()" aria-label="Toggle language">
+        <span class="lang-globe">🌐</span>
+        <span class="lang-text">{{ t.langBtnLabel }}</span>
+      </button>
+
+      <a [href]="'https://wa.me/' + whatsappNumber + '?text=' + (currentLang === 'ta' ? 'வணக்கம்%20ரம்யா%20டைல்ஸ்,%20எனக்கு%20டைல்ஸ்%20வேலை%20விபரம்%20தேவை.' : 'Hello%20Ramya%20Tiles,%20I%20need%20a%20quote%20for%20tile%20work.')" target="_blank" class="btn btn-whatsapp nav-whatsapp-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-        <span>WhatsApp Quote</span>
+        <span>{{ t.btnWhatsapp }}</span>
       </a>
+
       <a [href]="'tel:' + phone" class="btn btn-primary nav-call-btn">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span>Call Now</span>
+        <span>{{ t.btnCall }}</span>
       </a>
+
       <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -59,17 +73,22 @@
 
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-drawer" [class.open]="mobileMenuOpen">
+    <div class="mobile-lang-row">
+      <button class="mobile-lang-btn" (click)="toggleLanguage(); closeMobileMenu()">
+        <span>🌐 மொழி மாற்ற / Switch Language: <strong>{{ t.langBtnLabel }}</strong></span>
+      </button>
+    </div>
     <div class="mobile-links">
-      <a href="#services" (click)="closeMobileMenu()">Services</a>
-      <a href="#experience" (click)="closeMobileMenu()">25+ Yrs Experience</a>
-      <a href="#gallery" (click)="closeMobileMenu()">Our Work</a>
-      <a href="#why-us" (click)="closeMobileMenu()">Why Choose Us</a>
-      <a href="#faq" (click)="closeMobileMenu()">FAQs</a>
-      <a href="#contact" (click)="closeMobileMenu()">Book Site Visit</a>
+      <a href="#services" (click)="closeMobileMenu()">{{ t.navServices }}</a>
+      <a href="#experience" (click)="closeMobileMenu()">{{ t.navExperience }}</a>
+      <a href="#gallery" (click)="closeMobileMenu()">{{ t.navWork }}</a>
+      <a href="#why-us" (click)="closeMobileMenu()">{{ t.navWhyUs }}</a>
+      <a href="#faq" (click)="closeMobileMenu()">{{ t.navFaq }}</a>
+      <a href="#contact" (click)="closeMobileMenu()">{{ t.navContact }}</a>
     </div>
     <div class="mobile-drawer-cta">
-      <a [href]="'tel:' + phone" class="btn btn-primary" style="width: 100%;">Call: {{ displayPhone }}</a>
-      <a [href]="'https://wa.me/' + whatsappNumber" target="_blank" class="btn btn-whatsapp" style="width: 100%;">Message on WhatsApp</a>
+      <a [href]="'tel:' + phone" class="btn btn-primary" style="width: 100%;">{{ t.btnCall }}: {{ displayPhone }}</a>
+      <a [href]="'https://wa.me/' + whatsappNumber" target="_blank" class="btn btn-whatsapp" style="width: 100%;">{{ t.btnWhatsapp }}</a>
     </div>
   </div>
 </header>
@@ -80,59 +99,59 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-icon">🏆</span>
-        <span>25+ Years of Master Tile Craftsmanship</span>
+        <span>{{ t.heroBadge }}</span>
       </div>
       <h1 class="hero-headline">
-        Flawless Tile Laying, Renovation & Alteration Works
+        {{ t.heroHeadline }}
       </h1>
       <p class="hero-desc">
-        Specialist tile contractor undertaking new floor tiling, complete bathroom renovations, kitchen wall claddings, and terrace cooling tiles across Chennai. Direct contractor rates with laser-level precision and zero hollow tiles.
+        {{ t.heroDesc }}
       </p>
 
       <!-- Trust highlights checklist -->
       <div class="hero-highlights">
         <div class="highlight-item">
           <span class="check-icon">✓</span>
-          <span>Zero-Hollow Sound Guarantee</span>
+          <span>{{ t.check1 }}</span>
         </div>
         <div class="highlight-item">
           <span class="check-icon">✓</span>
-          <span>Perfect Water Slope & Drainage</span>
+          <span>{{ t.check2 }}</span>
         </div>
         <div class="highlight-item">
           <span class="check-icon">✓</span>
-          <span>Direct Contractor • Honest Rates</span>
+          <span>{{ t.check3 }}</span>
         </div>
       </div>
 
       <!-- Hero Call To Actions -->
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-gold btn-large">
-          <span>Book Free Site Visit</span>
+          <span>{{ t.btnBookVisit }}</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello,%20I%20would%20like%20to%20consult%20for%20my%20tile%20laying%20work.'" target="_blank" class="btn btn-whatsapp btn-large">
-          <span>WhatsApp Consultation</span>
+        <a [href]="'https://wa.me/' + whatsappNumber + '?text=' + (currentLang === 'ta' ? 'வணக்கம்,%20டைல்ஸ்%20வேலை%20ஆலோசனைக்கு%20அழைக்கிறேன்.' : 'Hello,%20I%20would%20like%20to%20consult%20for%20my%20tile%20laying%20work.')" target="_blank" class="btn btn-whatsapp btn-large">
+          <span>{{ t.btnWhatsappConsult }}</span>
         </a>
       </div>
 
       <!-- Quick Stats Strip -->
       <div class="hero-stats">
         <div class="stat-box">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">Years of Experience</div>
+          <div class="stat-number">{{ t.statExpVal }}</div>
+          <div class="stat-label">{{ t.statExpLabel }}</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">1,500+</div>
-          <div class="stat-label">Projects Completed</div>
+          <div class="stat-number">{{ t.statProjVal }}</div>
+          <div class="stat-label">{{ t.statProjLabel }}</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">On-Time Handover</div>
+          <div class="stat-number">{{ t.statTimeVal }}</div>
+          <div class="stat-label">{{ t.statTimeLabel }}</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">0</div>
-          <div class="stat-label">Broker Commission</div>
+          <div class="stat-number">{{ t.statDirectVal }}</div>
+          <div class="stat-label">{{ t.statDirectLabel }}</div>
         </div>
       </div>
     </div>
@@ -143,31 +162,27 @@
         <div class="card-glow"></div>
         <div class="exp-badge-large">
           <span class="exp-big">25+</span>
-          <span class="exp-sub">Years in Field</span>
+          <span class="exp-sub">{{ t.expCardBadge }}</span>
         </div>
-        <h3 class="card-title">Master Artisan Quality</h3>
+        <h3 class="card-title">{{ t.expCardTitle }}</h3>
         <p class="card-p">
-          "Every tile is laid with personal care, level checks, and strong bonding so your floors remain rock-solid for decades."
+          {{ t.expCardQuote }}
         </p>
 
         <div class="service-pills">
-          <span class="pill">Vitrified 2x4 & 4x6</span>
-          <span class="pill">Bathroom Renovations</span>
-          <span class="pill">Epoxy Grouting</span>
-          <span class="pill">Terrace Cool Tiles</span>
-          <span class="pill">Large Format Slabs</span>
+          <span class="pill" *ngFor="let p of t.expCardPills">{{ p }}</span>
         </div>
 
         <div class="card-footer-box">
           <div class="avatar-info">
             <span class="avatar-icon">👷‍♂️</span>
             <div>
-              <strong>Direct Contractor Contact</strong>
-              <small>Serving All Chennai & Suburbs</small>
+              <strong>{{ t.expCardDirectTitle }}</strong>
+              <small>{{ t.expCardDirectSub }}</small>
             </div>
           </div>
           <a [href]="'tel:' + phone" class="quick-call-pill">
-            Call: {{ displayPhone }}
+            {{ t.btnCall }}: {{ displayPhone }}
           </a>
         </div>
       </div>
@@ -179,71 +194,55 @@
 <section id="experience" class="section experience-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag gold">Master Contractor Expertise</span>
-      <h2 class="section-title">Why 25+ Years of Hands-on Experience Matters</h2>
+      <span class="section-tag gold">{{ t.expTag }}</span>
+      <h2 class="section-title">{{ t.expTitle }}</h2>
       <p class="section-subtitle">
-        Tiling is not just sticking stones with cement. Without experienced craftsmanship, tiles crack, sound hollow, leak into lower floors, and hold standing water. Here is what 25+ years of trade mastery guarantees:
+        {{ t.expSubtitle }}
       </p>
     </div>
 
     <div class="experience-grid">
       <div class="exp-feature-card">
-        <div class="exp-icon">📐</div>
-        <h3>Laser-Level Flatness & Zero Hollow Spots</h3>
-        <p>
-          We use high-precision cross-line laser levels and compact the mortar bed 100% underneath every tile, ensuring no hollow hollow-knock sounds or cracking under heavy furniture.
-        </p>
-        <span class="exp-card-highlight">✓ 100% Solid Mortar Bedding</span>
+        <div class="exp-icon">{{ t.feat1Icon }}</div>
+        <h3>{{ t.feat1Title }}</h3>
+        <p>{{ t.feat1Desc }}</p>
+        <span class="exp-card-highlight">{{ t.feat1Badge }}</span>
       </div>
 
       <div class="exp-feature-card">
-        <div class="exp-icon">🌊</div>
-        <h3>Engineered Water Slope & Drainage</h3>
-        <p>
-          Bathrooms and balconies require calculated millimeter slopes towards the drain trap. We guarantee zero standing water puddles, preventing slippery floors and mildew formation.
-        </p>
-        <span class="exp-card-highlight">✓ Zero Water Stagnation</span>
+        <div class="exp-icon">{{ t.feat2Icon }}</div>
+        <h3>{{ t.feat2Title }}</h3>
+        <p>{{ t.feat2Desc }}</p>
+        <span class="exp-card-highlight">{{ t.feat2Badge }}</span>
       </div>
 
       <div class="exp-feature-card">
-        <div class="exp-icon">✂️</div>
-        <h3>Precision 45° Miter Edge Cuts</h3>
-        <p>
-          For staircase step edges, wall corners, and window sills, we do specialized 45-degree chamfer miter cuts that look elegant and eliminate ugly plastic corner trims.
-        </p>
-        <span class="exp-card-highlight">✓ Luxury Architectural Finish</span>
+        <div class="exp-icon">{{ t.feat3Icon }}</div>
+        <h3>{{ t.feat3Title }}</h3>
+        <p>{{ t.feat3Desc }}</p>
+        <span class="exp-card-highlight">{{ t.feat3Badge }}</span>
       </div>
 
       <div class="exp-feature-card">
-        <div class="exp-icon">🛡️</div>
-        <h3>Double Waterproofing & Epoxy Grouting</h3>
-        <p>
-          We apply industrial waterproof elastomer membranes on bathroom floors before tiling, followed by chemical-resistant epoxy grout that never discolors or lets water seep through.
-        </p>
-        <span class="exp-card-highlight">✓ Lifetime Seepage Protection</span>
+        <div class="exp-icon">{{ t.feat4Icon }}</div>
+        <h3>{{ t.feat4Title }}</h3>
+        <p>{{ t.feat4Desc }}</p>
+        <span class="exp-card-highlight">{{ t.feat4Badge }}</span>
       </div>
     </div>
 
     <!-- Comparison Table Banner -->
     <div class="comparison-banner">
       <div class="comp-col comp-bad">
-        <h4>❌ Inexperienced Daily-Wage Masons</h4>
+        <h4>{{ t.compBadTitle }}</h4>
         <ul>
-          <li>Hasty laying leaving hollow air pockets underneath</li>
-          <li>Uneven tile lippage (edges tripping your feet)</li>
-          <li>Poor bathroom slope leaving water puddles</li>
-          <li>Normal white cement joints that turn black in 3 months</li>
-          <li>No accountability once payment is collected</li>
+          <li *ngFor="let item of t.compBadList">{{ item }}</li>
         </ul>
       </div>
       <div class="comp-col comp-good">
-        <h4>✅ Ramya Tiles Work Contractor (25+ Yrs)</h4>
+        <h4>{{ t.compGoodTitle }}</h4>
         <ul>
-          <li>Full mortar buttering with zero hollow sounds</li>
-          <li>Laser leveling for silky smooth transition between tiles</li>
-          <li>Perfect natural drainage slopes directly to outlets</li>
-          <li>Epoxy resin grouting that stays clean for 10+ years</li>
-          <li>Direct contractor on-site oversight and quality guarantee</li>
+          <li *ngFor="let item of t.compGoodList">{{ item }}</li>
         </ul>
       </div>
     </div>
@@ -254,10 +253,10 @@
 <section id="services" class="section services-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">All Tiling Solutions</span>
-      <h2 class="section-title">Comprehensive Tiling & Renovation Services</h2>
+      <span class="section-tag">{{ t.servicesTag }}</span>
+      <h2 class="section-title">{{ t.servicesTitle }}</h2>
       <p class="section-subtitle">
-        From new apartment floors to complete bathroom renovations and delicate alteration repairs — we undertake all residential and commercial tile works. Pricing is tailored case-by-case based on tile size, site condition & design.
+        {{ t.servicesSubtitle }}
       </p>
     </div>
 
@@ -272,7 +271,7 @@
         <p class="service-desc">{{ s.shortDesc }}</p>
 
         <div class="deliverables-box">
-          <div class="del-heading">What We Deliver:</div>
+          <div class="del-heading">{{ t.delivTitle }}</div>
           <ul class="del-list">
             <li *ngFor="let d of s.deliverables">
               <span class="del-bullet">✓</span>
@@ -282,8 +281,8 @@
         </div>
 
         <div class="service-card-action">
-          <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hello%20Ramya%20Tiles,%20I%20want%20to%20ask%20quote%20for%20' + s.title + '%20work.'" target="_blank" class="btn btn-outline" style="width: 100%;">
-            Ask for Free Quote
+          <a [href]="'https://wa.me/' + whatsappNumber + '?text=' + (currentLang === 'ta' ? 'வணக்கம்%20ரம்யா%20டைல்ஸ்,%20' + s.title + '%20வேலைக்கு%20மதிப்பீடு%20கேட்கிறேன்.' : 'Hello%20Ramya%20Tiles,%20I%20want%20to%20ask%20quote%20for%20' + s.title + '%20work.')" target="_blank" class="btn btn-outline" style="width: 100%;">
+            {{ t.btnAskQuote }}
           </a>
         </div>
       </div>
@@ -295,21 +294,21 @@
 <section id="gallery" class="section gallery-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Our Craftsmanship</span>
-      <h2 class="section-title">Recent Tile Work Portfolio</h2>
+      <span class="section-tag">{{ t.galleryTag }}</span>
+      <h2 class="section-title">{{ t.galleryTitle }}</h2>
       <p class="section-subtitle">
-        A glimpse of completed residential and commercial tile projects executed with meticulous alignment, clean corners, and premium grouting across Chennai.
+        {{ t.gallerySubtitle }}
       </p>
     </div>
 
     <!-- Gallery Category Filter Tabs -->
     <div class="gallery-tabs">
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'all'" (click)="setGalleryTab('all')">All Works</button>
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'living'" (click)="setGalleryTab('living')">Living & Halls</button>
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'bathrooms'" (click)="setGalleryTab('bathrooms')">Bathrooms</button>
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'kitchen'" (click)="setGalleryTab('kitchen')">Kitchens</button>
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'terrace'" (click)="setGalleryTab('terrace')">Terrace Cooling</button>
-      <button class="tab-btn" [class.active]="activeGalleryTab === 'commercial'" (click)="setGalleryTab('commercial')">Commercial & Parking</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'all'" (click)="setGalleryTab('all')">{{ t.tabAll }}</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'living'" (click)="setGalleryTab('living')">{{ t.tabLiving }}</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'bathrooms'" (click)="setGalleryTab('bathrooms')">{{ t.tabBath }}</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'kitchen'" (click)="setGalleryTab('kitchen')">{{ t.tabKitchen }}</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'terrace'" (click)="setGalleryTab('terrace')">{{ t.tabTerrace }}</button>
+      <button class="tab-btn" [class.active]="activeGalleryTab === 'commercial'" (click)="setGalleryTab('commercial')">{{ t.tabCommercial }}</button>
     </div>
 
     <!-- Projects Grid -->
@@ -325,18 +324,18 @@
           
           <div class="project-specs">
             <div class="spec-item">
-              <span class="spec-label">Tile Spec:</span>
+              <span class="spec-label">{{ t.tileSpecLabel }}</span>
               <span class="spec-val">{{ p.tileType }}</span>
             </div>
             <div class="spec-item">
-              <span class="spec-label">Project Size:</span>
+              <span class="spec-label">{{ t.projSizeLabel }}</span>
               <span class="spec-val">{{ p.size }}</span>
             </div>
           </div>
         </div>
         <div class="project-footer">
-          <a [href]="'https://wa.me/' + whatsappNumber + '?text=Hi,%20I%20saw%20your%20project%20' + p.title + '%20and%20want%20similar%20work.'" target="_blank" class="project-link">
-            <span>Enquire Similar Project</span>
+          <a [href]="'https://wa.me/' + whatsappNumber + '?text=' + (currentLang === 'ta' ? 'வணக்கம்,%20உங்கள்%20' + p.title + '%20போன்ற%20வேலை%20செய்ய%20விரும்புகிறேன்.' : 'Hi,%20I%20saw%20your%20project%20' + p.title + '%20and%20want%20similar%20work.')" target="_blank" class="project-link">
+            <span>{{ t.enquireSimilar }}</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -349,36 +348,36 @@
 <section id="why-us" class="section process-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag gold">Smooth & Transparent</span>
-      <h2 class="section-title">How We Complete Your Tile Project</h2>
+      <span class="section-tag gold">{{ t.processTag }}</span>
+      <h2 class="section-title">{{ t.processTitle }}</h2>
       <p class="section-subtitle">
-        Simple 4-step workflow ensuring zero surprises, accurate material estimates, and on-time completion.
+        {{ t.processSubtitle }}
       </p>
     </div>
 
     <div class="process-grid">
       <div class="process-card">
-        <div class="process-step-num">01</div>
-        <h3>Site Visit & Laser Measurement</h3>
-        <p>We visit your site in Chennai, check the existing floor level, inspect plumbing points, and measure exact square footage to avoid tile wastage.</p>
+        <div class="process-step-num">{{ t.step1Num }}</div>
+        <h3>{{ t.step1Title }}</h3>
+        <p>{{ t.step1Desc }}</p>
       </div>
 
       <div class="process-card">
-        <div class="process-step-num">02</div>
-        <h3>Transparent Fixed Quote</h3>
-        <p>You receive a clear breakdown of labor charges, adhesive/sand requirements, and timeline. No hidden extras or surprise rate increases.</p>
+        <div class="process-step-num">{{ t.step2Num }}</div>
+        <h3>{{ t.step2Title }}</h3>
+        <p>{{ t.step2Desc }}</p>
       </div>
 
       <div class="process-card">
-        <div class="process-step-num">03</div>
-        <h3>Master Artisan Execution</h3>
-        <p>Our experienced craftsmen lay tiles with laser alignment, correct drainage slope, and even spacer joints, keeping the work area neat and orderly.</p>
+        <div class="process-step-num">{{ t.step3Num }}</div>
+        <h3>{{ t.step3Title }}</h3>
+        <p>{{ t.step3Desc }}</p>
       </div>
 
       <div class="process-card">
-        <div class="process-step-num">04</div>
-        <h3>Epoxy Grouting & Final Polish</h3>
-        <p>We finish with waterproof epoxy grouting, clean all tile surfaces thoroughly, conduct joint inspection, and hand over your pristine floor.</p>
+        <div class="process-step-num">{{ t.step4Num }}</div>
+        <h3>{{ t.step4Title }}</h3>
+        <p>{{ t.step4Desc }}</p>
       </div>
     </div>
   </div>
@@ -388,44 +387,20 @@
 <section class="section testimonials-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Customer Feedback</span>
-      <h2 class="section-title">What Chennai Homeowners Say</h2>
+      <span class="section-tag">{{ t.testTag }}</span>
+      <h2 class="section-title">{{ t.testTitle }}</h2>
       <p class="section-subtitle">
-        Trusted by families, builders, and architects across Chennai for more than 25 years.
+        {{ t.testSubtitle }}
       </p>
     </div>
 
     <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="test-text">
-          "Ramya Tiles contractor did our 2 BHK complete floor alteration in Anna Nagar. The 25+ years experience clearly shows — every tile is completely flat with no uneven edges, and water in the bathroom flows smoothly into the trap without any stagnation!"
-        </p>
+      <div class="testimonial-card" *ngFor="let item of testimonials">
+        <div class="stars">{{ item.stars }}</div>
+        <p class="test-text">{{ item.text }}</p>
         <div class="test-author">
-          <strong>K. Senthil Nathan</strong>
-          <span>Anna Nagar, Chennai • 850 sq.ft Floor & Bathrooms</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="test-text">
-          "We engaged them for our independent villa terrace cooling tiles and bathroom renovation in Porur. Very polite, completely honest in material estimates, and finished 2 days before the promised deadline. Highly recommended!"
-        </p>
-        <div class="test-author">
-          <strong>M. Rajeshwari</strong>
-          <span>Porur, Chennai • 1,200 sq.ft Terrace & Remodel</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p class="test-text">
-          "Direct contractor without any middle agents. He personally oversaw the epoxy grouting and large vitrified tiles in my showroom in Ambattur. No hollow sound anywhere. Rock solid work!"
-        </p>
-        <div class="test-author">
-          <strong>V. Sivakumar</strong>
-          <span>Ambattur Industrial Estate • Commercial Showroom</span>
+          <strong>{{ item.author }}</strong>
+          <span>{{ item.project }}</span>
         </div>
       </div>
     </div>
@@ -436,10 +411,10 @@
 <section id="faq" class="section faq-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag gold">Got Questions?</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
+      <span class="section-tag gold">{{ t.faqTag }}</span>
+      <h2 class="section-title">{{ t.faqTitle }}</h2>
       <p class="section-subtitle">
-        Clear, honest answers to help you plan your tile installation or remodeling project.
+        {{ t.faqSubtitle }}
       </p>
     </div>
 
@@ -462,17 +437,17 @@
   <div class="container">
     <div class="contact-wrapper">
       <div class="contact-info-col">
-        <span class="section-tag gold">Get In Touch</span>
-        <h2 class="contact-title">Book a Free Site Visit & Consultation</h2>
+        <span class="section-tag gold">{{ t.contactTag }}</span>
+        <h2 class="contact-title">{{ t.contactTitle }}</h2>
         <p class="contact-desc">
-          Speak directly with our master contractor. We will visit your property anywhere in Chennai, inspect your floor condition, and provide an accurate quotation.
+          {{ t.contactDesc }}
         </p>
 
         <div class="contact-cards">
           <a [href]="'tel:' + phone" class="contact-info-card">
             <div class="c-icon">📞</div>
             <div>
-              <span class="c-label">Direct Phone Call</span>
+              <span class="c-label">{{ t.contactCallLabel }}</span>
               <strong class="c-val">{{ displayPhone }}</strong>
             </div>
           </a>
@@ -480,7 +455,7 @@
           <a [href]="'https://wa.me/' + whatsappNumber" target="_blank" class="contact-info-card whatsapp-card">
             <div class="c-icon">💬</div>
             <div>
-              <span class="c-label">WhatsApp Quick Chat</span>
+              <span class="c-label">{{ t.contactWhatsappLabel }}</span>
               <strong class="c-val">{{ displayWhatsApp }} (Instant Reply)</strong>
             </div>
           </a>
@@ -488,8 +463,8 @@
           <div class="contact-info-card">
             <div class="c-icon">📍</div>
             <div>
-              <span class="c-label">Operating Location</span>
-              <strong class="c-val">Chennai & Suburbs (Tamil Nadu)</strong>
+              <span class="c-label">{{ t.contactLocationLabel }}</span>
+              <strong class="c-val">{{ t.contactLocationVal }}</strong>
             </div>
           </div>
         </div>
@@ -497,8 +472,8 @@
         <div class="guarantee-box">
           <span class="g-icon">🛡️</span>
           <div>
-            <strong>100% Workmanship & Slope Guarantee</strong>
-            <small>Direct artisan accountability with zero sub-contracting.</small>
+            <strong>{{ t.guaranteeTitle }}</strong>
+            <small>{{ t.guaranteeSub }}</small>
           </div>
         </div>
       </div>
@@ -506,52 +481,52 @@
       <!-- Booking Form -->
       <div class="contact-form-col">
         <div class="form-container">
-          <h3 class="form-title">Send Your Work Details</h3>
-          <p class="form-subtitle">Fill in your details below to instantly connect on WhatsApp:</p>
+          <h3 class="form-title">{{ t.formTitle }}</h3>
+          <p class="form-subtitle">{{ t.formSubtitle }}</p>
 
           <form (ngSubmit)="submitBooking()">
             <div class="form-group">
-              <label>Your Name *</label>
-              <input type="text" [(ngModel)]="bookingData.name" name="name" placeholder="e.g. Ramesh Kumar" required class="form-control">
+              <label>{{ t.formName }}</label>
+              <input type="text" [(ngModel)]="bookingData.name" name="name" [placeholder]="currentLang === 'ta' ? 'எ.கா. ரமேஷ் குமார்' : 'e.g. Ramesh Kumar'" required class="form-control">
             </div>
 
             <div class="form-group">
-              <label>Phone Number *</label>
+              <label>{{ t.formPhone }}</label>
               <input type="tel" [(ngModel)]="bookingData.phone" name="phone" placeholder="e.g. 9840123456" required class="form-control">
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label>Area / Location in Chennai</label>
-                <input type="text" [(ngModel)]="bookingData.location" name="location" placeholder="e.g. Porur, Anna Nagar" class="form-control">
+                <label>{{ t.formLocation }}</label>
+                <input type="text" [(ngModel)]="bookingData.location" name="location" [placeholder]="currentLang === 'ta' ? 'எ.கா. போரூர், அண்ணா நகர்' : 'e.g. Porur, Anna Nagar'" class="form-control">
               </div>
 
               <div class="form-group">
-                <label>Approx Area (sq.ft)</label>
+                <label>{{ t.formArea }}</label>
                 <input type="number" [(ngModel)]="bookingData.area" name="area" placeholder="e.g. 600" class="form-control">
               </div>
             </div>
 
             <div class="form-group">
-              <label>Service Required</label>
+              <label>{{ t.formService }}</label>
               <select [(ngModel)]="bookingData.service" name="service" class="form-control">
-                <option value="New Floor Tile Laying">New Floor Tile Laying</option>
-                <option value="Bathroom Renovation & Remodel">Bathroom Renovation & Remodel</option>
-                <option value="Kitchen Wall & Counter Tiling">Kitchen Wall & Counter Tiling</option>
-                <option value="Terrace Cooling Tiles">Terrace Cooling Weathering Tiles</option>
-                <option value="Alteration & Demolition Works">Alteration & Demolition Works</option>
-                <option value="Hollow / Cracked Tile Repair">Hollow / Cracked Tile Repair</option>
-                <option value="Epoxy Waterproof Grouting">Epoxy Waterproof Grouting</option>
+                <option value="New Floor Tile Laying">{{ currentLang === 'ta' ? 'புதிய தரை டைல்ஸ் பதித்தல்' : 'New Floor Tile Laying' }}</option>
+                <option value="Bathroom Renovation & Remodel">{{ currentLang === 'ta' ? 'பாத்ரூம் முழு புதுப்பித்தல் & வாட்டர்ப்ரூஃபிங்' : 'Bathroom Renovation & Remodel' }}</option>
+                <option value="Kitchen Wall & Counter Tiling">{{ currentLang === 'ta' ? 'கிச்சன் சுவர் & மேடை டைல்ஸ்' : 'Kitchen Wall & Counter Tiling' }}</option>
+                <option value="Terrace Cooling Tiles">{{ currentLang === 'ta' ? 'மாடி வெப்பம் தணிக்கும் கூலிங் டைல்ஸ்' : 'Terrace Cooling Weathering Tiles' }}</option>
+                <option value="Alteration & Demolition Works">{{ currentLang === 'ta' ? 'பழைய டைல்ஸ் இடித்தல் & மாற்று வேலைகள்' : 'Alteration & Demolition Works' }}</option>
+                <option value="Hollow / Cracked Tile Repair">{{ currentLang === 'ta' ? 'பொள்ளல் & உடைந்த டைல்ஸ் பழுது பார்த்தல்' : 'Hollow / Cracked Tile Repair' }}</option>
+                <option value="Epoxy Waterproof Grouting">{{ currentLang === 'ta' ? 'வாட்டர்ப்ரூஃப் எப்பாக்ஸி க்ரௌட்டிங்' : 'Epoxy Waterproof Grouting' }}</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label>Additional Notes / Requirement</label>
-              <textarea [(ngModel)]="bookingData.message" name="message" rows="3" placeholder="Tell us if you already bought tiles, need old tile removal, etc." class="form-control"></textarea>
+              <label>{{ t.formNotes }}</label>
+              <textarea [(ngModel)]="bookingData.message" name="message" rows="3" [placeholder]="currentLang === 'ta' ? 'எந்த பகுதி, எத்தனை அறைகள், பழைய தரை இடிக்க வேண்டுமா போன்ற குறிப்புகளை எழுதலாம்...' : 'Tell us if you already bought tiles, need old tile removal, etc.'" class="form-control"></textarea>
             </div>
 
             <button type="submit" class="btn btn-whatsapp btn-large" style="width: 100%;">
-              <span>Connect with Contractor on WhatsApp</span>
+              <span>{{ t.formSubmitBtn }}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </form>
@@ -567,43 +542,43 @@
     <div class="footer-brand">
       <div class="brand-logo footer-logo">
         <span class="tile-grid-icon">▦</span>
-        <span class="brand-name">RAMYA TILES</span>
+        <span class="brand-name">{{ t.brandName }}</span>
       </div>
       <p class="footer-desc">
-        Specialist Tile Laying Contractor in Chennai with over 25+ years of hands-on experience in residential, apartment, and commercial tiling. Master craftsmanship with direct contractor pricing.
+        {{ t.footerDesc }}
       </p>
       <div class="footer-contact-snippet">
-        <div><strong>Direct Call:</strong> {{ displayPhone }}</div>
-        <div><strong>WhatsApp:</strong> {{ displayWhatsApp }}</div>
-        <div><strong>Location:</strong> Chennai, Tamil Nadu</div>
+        <div><strong>{{ t.contactCallLabel }}:</strong> {{ displayPhone }}</div>
+        <div><strong>{{ t.contactWhatsappLabel }}:</strong> {{ displayWhatsApp }}</div>
+        <div><strong>{{ t.contactLocationLabel }}:</strong> Chennai, Tamil Nadu</div>
       </div>
     </div>
 
     <div class="footer-links-col">
-      <h4>Our Services</h4>
+      <h4>{{ t.footerServicesHeading }}</h4>
       <ul>
-        <li><a href="#services">New Floor Tiling</a></li>
-        <li><a href="#services">Bathroom Renovation</a></li>
-        <li><a href="#services">Kitchen Backsplashes</a></li>
-        <li><a href="#services">Terrace Cooling Tiles</a></li>
-        <li><a href="#services">Epoxy Waterproof Grouting</a></li>
-        <li><a href="#services">Alteration & Demolition</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'தரை டைல்ஸ் பதித்தல்' : 'New Floor Tiling' }}</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'பாத்ரூம் புதுப்பித்தல்' : 'Bathroom Renovation' }}</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'கிச்சன் டைல்ஸ்' : 'Kitchen Backsplashes' }}</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'மாடி கூலிங் டைல்ஸ்' : 'Terrace Cooling Tiles' }}</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'எப்பாக்ஸி க்ரௌட்டிங்' : 'Epoxy Waterproof Grouting' }}</a></li>
+        <li><a href="#services">{{ currentLang === 'ta' ? 'டைல்ஸ் இடித்தல் & மாற்றுதல்' : 'Alteration & Demolition' }}</a></li>
       </ul>
     </div>
 
     <div class="footer-links-col">
-      <h4>Coverage in Chennai</h4>
+      <h4>{{ t.footerCoverageHeading }}</h4>
       <div class="areas-cloud">
-        <span>Anna Nagar</span>
-        <span>Porur</span>
-        <span>Ambattur</span>
-        <span>Tambaram</span>
-        <span>Velachery</span>
-        <span>Mogappair</span>
-        <span>Koyambedu</span>
-        <span>Maduravoyal</span>
-        <span>Guindy</span>
-        <span>Avadi</span>
+        <span>அண்ணா நகர் (Anna Nagar)</span>
+        <span>போரூர் (Porur)</span>
+        <span>அம்பத்தூர் (Ambattur)</span>
+        <span>தாம்பரம் (Tambaram)</span>
+        <span>வேளச்சேரி (Velachery)</span>
+        <span>முகப்பேர் (Mogappair)</span>
+        <span>கோயம்பேடு (Koyambedu)</span>
+        <span>மதுரவாயல் (Maduravoyal)</span>
+        <span>கிண்டி (Guindy)</span>
+        <span>ஆவடி (Avadi)</span>
         <span>OMR</span>
       </div>
     </div>
@@ -611,18 +586,16 @@
 
   <div class="footer-bottom">
     <div class="container footer-bottom-flex">
-      <p>© 2026 Ramya Tiles Work Contractor. All rights reserved. 25+ Years of Craftsmanship Excellence.</p>
+      <p>{{ t.footerBottomText }}</p>
       <div class="footer-badges">
-        <span>Master Tile Contractor</span>
-        <span>•</span>
-        <span>Chennai, Tamil Nadu</span>
+        <span>{{ t.footerContractorBadge }}</span>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- Floating WhatsApp Quick Button -->
-<a [href]="'https://wa.me/' + whatsappNumber + '?text=Vanakkam%20Sir,%20I%20need%20tile%20laying%20work%20quotation.'" target="_blank" class="floating-whatsapp" aria-label="Chat with contractor on WhatsApp">
+<a [href]="'https://wa.me/' + whatsappNumber + '?text=' + (currentLang === 'ta' ? 'வணக்கம்%20ஐயா,%20டைல்ஸ்%20வேலை%20மதிப்பீடு%20கேட்கிறேன்.' : 'Vanakkam%20Sir,%20I%20need%20tile%20laying%20work%20quotation.')" target="_blank" class="floating-whatsapp" aria-label="Chat with contractor on WhatsApp">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-  <span>Direct WhatsApp Quote</span>
+  <span>{{ t.floatingWhatsappText }}</span>
 </a>
